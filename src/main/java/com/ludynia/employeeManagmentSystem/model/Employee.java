@@ -20,23 +20,15 @@ public class Employee {
     private String firstName;
     @NotEmpty(message = "This field can't be empty")
     private String lastName;
-    @DateTimeFormat(pattern = "dd-MM-yyyy")
-    private LocalDate workStartDate;
-
-    public Employee() {
-    }
-
-    public Employee(Long id, @NotEmpty(message = "This field can't be empty") String firstName,
-                    @NotEmpty(message = "This field can't be empty") String lastName,
-                    LocalDate workStartDate) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.workStartDate = workStartDate;
-    }
+    @NotEmpty(message = "This field can't be empty")
+    private String email;
 
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getFirstName() {
@@ -55,12 +47,15 @@ public class Employee {
         this.lastName = lastName;
     }
 
-    public LocalDate getWorkStartDate() {
-        return workStartDate;
+    public String getEmail() {
+        return email;
     }
 
-    public void setWorkStartDate(LocalDate workStartDate) {
-        this.workStartDate = workStartDate;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Employee() {
     }
 
     @Override
@@ -69,7 +64,7 @@ public class Employee {
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", workStartDate=" + workStartDate +
+                ", email='" + email + '\'' +
                 '}';
     }
 }
