@@ -17,13 +17,15 @@
             <th>Employee First Name</th>
             <th>Employee Last Name</th>
             <th>Employee Email</th>
+            <th>TO DO</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="employee : ${listOfEmployees}">
-            <td th:text="${employee.email}"></td>
             <td th:text="${employee.firstName}"></td>
             <td th:text="${employee.lastName}"></td>
+            <td th:text="${employee.email}"></td>
+            <td> <a th:href="@{/showUpdateEmployeeForm/{id}(id=${employee.id})}">Update</a></td>
         </tr>
         </tbody>
     </table>

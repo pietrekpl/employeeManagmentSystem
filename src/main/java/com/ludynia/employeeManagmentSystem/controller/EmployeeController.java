@@ -34,6 +34,13 @@ public class EmployeeController {
         return "redirect:/";
 
     }
+    @GetMapping("/showUpdateEmployeeForm/{id}")
+    public String showUpdateEmployeeForm(@PathVariable(value = "id")Long id, Model model) {
+        Employee employee = employeeService.getEmployeeById(id);
+        model.addAttribute("employee", employee);
+        return "updateEmployee";
+
+    }
 
 
 }
