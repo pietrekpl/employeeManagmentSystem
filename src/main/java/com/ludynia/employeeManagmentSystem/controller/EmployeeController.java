@@ -4,7 +4,10 @@ import com.ludynia.employeeManagmentSystem.model.Employee;
 import com.ludynia.employeeManagmentSystem.service.EmployeeService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 
 @Controller
@@ -29,7 +32,10 @@ public class EmployeeController {
         return "formNewEmployee";
     }
     @PostMapping("/saveEmployee")
-    public String saveEmployee(@ModelAttribute("employee") Employee employee) {
+    public String saveEmployee(@Valid @ModelAttribute("employee") Employee employee, BindingResult result) {
+        if (result.hasErrors()){
+            return "formNewEmployee";
+        }
         employeeService.saveEmployee(employee);
         return "redirect:/";
 

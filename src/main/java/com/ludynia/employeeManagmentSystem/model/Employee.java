@@ -3,6 +3,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 
 
@@ -17,6 +18,7 @@ public class Employee {
     @NotEmpty(message = "This field can't be empty")
     private String lastName;
     @NotEmpty(message = "This field can't be empty")
+    @Email
     private String email;
 
     public Long getId() {

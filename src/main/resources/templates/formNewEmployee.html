@@ -10,9 +10,12 @@
     <form  action="#" th:action="@{/saveEmployee}" th:object="${employee}"  method="post">
     <input class="form-control form-control-lg" aria-label=".form-control-sm example" placeholder="Employee First Name" type="text" th:field="*{firstName}">
     <br>
+        <div class="alert alert-warning" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></div>
     <input class="form-control form-control-lg" aria-label=".form-control-sm example" placeholder="Employee last Name" type="text" th:field="*{lastName}">
     <br>
+        <div class="alert alert-warning" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></div>
     <input class="form-control form-control-lg" aria-label=".form-control-sm example" placeholder="Employee email" type="text" th:field="*{email}">
+        <div class="alert alert-warning" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
     <br>
         <button type="submit" class="btn btn-secondary">Save Employee</button>
     </form>
