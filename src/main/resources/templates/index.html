@@ -50,6 +50,11 @@
 </div>
 <div class="clock"></div>
 <h1 align="center">Employee Managment System</h1>
+<div class="container">
+    <h2 class="bg-dark text-white p-2 text-center">
+        Hello, <span id="user-name">User</span>!
+    </h2>
+</div>
 <div align="center">
     <a th:href="@{/newEmployeeForm}" class="btn btn-primary">Add new Employee</a>
 </div>
@@ -73,29 +78,6 @@
         </tr>
         </tbody>
     </table>
-</div>
-<div class="container">
-    <h2 class="bg-dark text-white p-2 text-center">
-        Hello, <span id="user-name">User</span>!
-    </h2>
-    <h4 class="bg-success text-white text-center p-1">Chat with the employee</h4>
-    <div class="row d-flex justify-content-center">
-        <div class="col-lg-6 col-sm-10 border border-primary shadow-lg" id="msg-window"
-             style="height:400px; overflow:scroll;">
-            <!-- msg will popup here by js -->
-        </div>
-        <div class="col-lg-7 col-sm-12 px-4 m-3">
-            <form class="row">
-                <div class="form-group col-8">
-                    <input class="form-control" id="msg-text" placeholder="Your Message">
-                </div>
-                <div class="col-4">
-                    <input type="submit" class="btn btn-primary col" id="msg-send" value="send">
-                </div>
-            </form>
-        </div>
-        <!-- Default form login -->
-    </div>
 </div>
 
 </body>
