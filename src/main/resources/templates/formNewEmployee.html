@@ -17,6 +17,10 @@
     <input class="form-control form-control-lg" aria-label=".form-control-sm example" placeholder="Employee email" type="text" th:field="*{email}">
         <div class="alert alert-warning" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
     <br>
+        <input class="form-control form-control-lg" aria-label=".form-control-sm example" placeholder="Contract start date" type="date" th:field="*{date}">
+        <div class="alert alert-warning" th:if="${#fields.hasErrors('date')}" th:errors="*{date}"></div>
+        <br>
+
         <button type="submit" class="btn btn-secondary">Save Employee</button>
     </form>
 </div>

@@ -1,11 +1,13 @@
 package com.ludynia.employeeManagmentSystem.model;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
-
+import java.time.LocalDate;
 
 
 @Entity
@@ -20,6 +22,16 @@ public class Employee {
     @NotEmpty(message = "This field can't be empty")
     @Email
     private String email;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate date;
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
 
     public Long getId() {
         return id;
@@ -63,6 +75,7 @@ public class Employee {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
+                ", date=" + date +
                 '}';
     }
 }
